@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HTML, CSS, JS Combined Code</title>
+<style>
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: #f8f9fb;
+  padding: 20px;
+  line-height: 1.5;
+}
+h1 {
+  color: #2c3e50;
+}
+section {
+  background: #fff;
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+pre {
+  background: #272822;
+  color: #f8f8f2;
+  padding: 15px;
+  overflow-x: auto;
+  border-radius: 8px;
+}
+code {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 14px;
+}
+</style>
+</head>
+<body>
+  <h1>HTML, CSS, and JavaScript Code Files</h1>
+
+  <section>
+    <h2>index.html</h2>
+    <pre><code><!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Profile Card Example</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <h1>My Portfolio</h1>
+    <nav>
+      <a href="#">Home</a>
+      <a href="#">About</a>
+      <a href="#">Contact</a>
+    </nav>
+  </header>
+
+  <main class="container">
+    <section class="card">
+      <img src="profile.jpg" alt="Profile picture" class="avatar" />
+      <h2 class="name">Loga Priya</h2>
+      <p class="title">Frontend Developer</p>
+      <p class="bio">A short bio goes here. This is an example profile card built with HTML, CSS and JavaScript.</p>
+      <div class="actions">
+        <button id="followBtn">Follow</button>
+        <button id="messageBtn">Message</button>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>&copy; 2025 My Portfolio</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
+</code></pre>
+  </section>
+
+  <section>
+    <h2>styles.css</h2>
+    <pre><code>/* styles.css - Profile card styles */
+:root{
+  --bg: #f4f6f8;
+  --card: #ffffff;
+  --accent: #0b76ef;
+  --text: #222;
+}
+
+*{box-sizing:border-box;margin:0;padding:0}
+body{
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+  background:var(--bg);
+  color:var(--text);
+  line-height:1.4;
+  padding:24px;
+}
+
+.site-header{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  margin-bottom:24px;
+}
+
+.site-header h1{font-size:20px}
+.site-header nav a{margin-left:12px;text-decoration:none;color:var(--text);opacity:0.8}
+
+.container{
+  display:flex;
+  justify-content:center;
+  align-items:flex-start;
+  gap:20px;
+}
+
+/* Card */
+.card{
+  width:320px;
+  background:var(--card);
+  border-radius:12px;
+  padding:20px;
+  box-shadow:0 6px 18px rgba(20,30,40,0.08);
+  text-align:center;
+}
+
+.avatar{
+  width:96px;height:96px;border-radius:50%;object-fit:cover;margin:0 auto 12px;display:block;
+}
+
+.name{font-size:20px;margin-bottom:6px}
+.title{font-size:14px;color:gray;margin-bottom:12px}
+.bio{font-size:13px;color:#444;margin-bottom:16px;padding:0 6px}
+
+.actions{display:flex;gap:10px;justify-content:center}
+.actions button{
+  padding:10px 14px;border-radius:8px;border:0;cursor:pointer;
+  background:var(--accent);color:white;font-weight:600;
+  box-shadow:0 4px 10px rgba(11,118,239,0.18);
+}
+.actions button.secondary{
+  background:transparent;color:var(--accent);border:2px solid var(--accent);
+  box-shadow:none;font-weight:600;
+}
+
+.site-footer{margin-top:28px;text-align:center;color:#666}
+</code></pre>
+  </section>
+
+  <section>
+    <h2>script.js</h2>
+    <pre><code>// script.js - Simple interactivity for the profile card
+document.addEventListener('DOMContentLoaded', function(){
+  const followBtn = document.getElementById('followBtn');
+  const messageBtn = document.getElementById('messageBtn');
+
+  let followed = false;
+  followBtn.addEventListener('click', function(){
+    followed = !followed;
+    followBtn.textContent = followed ? 'Following' : 'Follow';
+    followBtn.style.opacity = followed ? '0.9' : '1';
+  });
+
+  messageBtn.addEventListener('click', function(){
+    const name = document.querySelector('.name')?.textContent || 'User';
+    alert('Open message box for ' + name + '.');
+  });
+});
+</code></pre>
+  </section>
+
+</body>
+</html>
